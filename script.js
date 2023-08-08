@@ -90,4 +90,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
   displayBooks(); // Call the function to display books initially.
 });
-
