@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       $author.classList.add('author');
       $delete.classList.add('delete');
 
-      $title.textContent = book.title;
+      $title.innerText = book.title;
       $author.textContent = book.author;
       $delete.innerHTML = 'Delete';
       $delete.setAttribute('id', 'delete');
@@ -45,18 +45,24 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('library', JSON.stringify(library));
   }
 
-  function addBookToLibrary(title, author) {
-    class Book {
-      constructor(title, author) {
-        this.title = title;
-        this.author = author;
-      }
+  class Book {
+    constructor(title, author) {
+      this.title = title;
+      this.author = author;
     }
+  }
 
-    const newBook = new Book(title, author);
+  function addBookToLibrary() {
+    console.log($captureAuthor.value)
+    console.log($captureTitle.value)
+    
+
+    const newBook = new Book($captureTitle.value, $captureAuthor.value);
     library.push(newBook);
     updateLocalStorage();
     displayBooks();
+    console.log($captureAuthor.value)
+    console.log($captureTitle.value)
   }
 
   function emptyForm() {
@@ -67,13 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const $form = document.querySelector('.addForm');
   $form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const $captureTitle = document.querySelector('.title');
-    const $captureAuthor = document.querySelector('.author');
-
-    addBookToLibrary(
-      $captureTitle.value,
-      $captureAuthor.value,
-    );
+    addBookToLibrary();
     emptyForm();
   });
 
@@ -92,4 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   displayBooks(); // Call the function to display books initially.
-});
+  
+}); 
+
