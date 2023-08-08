@@ -53,16 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function addBookToLibrary() {
-    console.log($captureAuthor.value)
-    console.log($captureTitle.value)
-    
+    const $captureTitle = document.querySelector('#title');
+    const $captureAuthor = document.querySelector('#author');
 
     const newBook = new Book($captureTitle.value, $captureAuthor.value);
     library.push(newBook);
     updateLocalStorage();
     displayBooks();
-    console.log($captureAuthor.value)
-    console.log($captureTitle.value)
   }
 
   function emptyForm() {
@@ -92,6 +89,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   displayBooks(); // Call the function to display books initially.
-  
-}); 
+});
 
