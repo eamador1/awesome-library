@@ -1,22 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
-  let library = [
-    {
-      title: 'One Hundred Years of Solitude',
-      author: 'Gabriel Garcia Marquez',
-    },
-    {
-      title: 'Around the World in Eighty Days',
-      author: 'Jules Verne',
-    },
-  ];
+class Library {
+  constructor() {
+    this.books = JSON.parse(localStorage.getItem('library')) || [];
+  }
 
-  library = JSON.parse(localStorage.getItem('library')) || [];
+  addBook(title, author) {
+    const newBook = { title, author };
+    this.books.push(newBook);
+    this.updateLocalStorage();
+    this.displayBooks();
+  }
 
-  const $books = document.querySelector('.displayLibrary');
+  deleteBook(index) {
+    this.books.splice(index, 1);
+    this.updateLocalStorage();
+    this.displayBooks();
+  }
 
-  function displayBooks() {
+  updateLocalStorage() {
+    localStorage.setItem('library', JSON.stringify(this.books));
+  }
+
+  displayBooks() {
+    const $books = document.querySelector('.displayLibrary');
     $books.innerHTML = '';
-    library.forEach((book) => {
+
+    this.books.forEach((book, index) => {
       const $contBook = document.createElement('div');
       const $title = document.createElement('h6');
       const $author = document.createElement('h6');
@@ -24,69 +32,55 @@ document.addEventListener('DOMContentLoaded', () => {
       const $division = document.createElement('hr');
 
       $contBook.classList.add('cont-book');
-      $title.classList.add('title');
-      $author.classList.add('author');
+      $title.classList.add('titleBook');
+      $author.classList.add('authorBook');
       $delete.classList.add('delete');
 
       $title.innerText = book.title;
       $author.textContent = book.author;
       $delete.innerHTML = 'Delete';
-      $delete.setAttribute('id', 'delete');
 
       $contBook.appendChild($title);
       $contBook.appendChild($author);
       $contBook.appendChild($delete);
       $contBook.appendChild($division);
+
+      $delete.addEventListener('click', () => this.deleteBook(index));
+
       $books.appendChild($contBook);
     });
   }
+}
 
-  function updateLocalStorage() {
-    localStorage.setItem('library', JSON.stringify(library));
-  }
-
-  class Book {
-    constructor(title, author) {
-      this.title = title;
-      this.author = author;
-    }
-  }
-
-  function addBookToLibrary() {
-    const $captureTitle = document.querySelector('#title');
-    const $captureAuthor = document.querySelector('#author');
-
-    const newBook = new Book($captureTitle.value, $captureAuthor.value);
-    library.push(newBook);
-    updateLocalStorage();
-    displayBooks();
-  }
+document.addEventListener('DOMContentLoaded', () => {
+  const myLibrary = new Library();
 
   function emptyForm() {
     const $form = document.querySelector('.addForm');
     $form.reset();
   }
 
+  function addBookToLibrary() {
+    const $captureTitle = document.querySelector('#title');
+    const $captureAuthor = document.querySelector('#author');
+    myLibrary.addBook($captureTitle.value, $captureAuthor.value);
+    emptyForm();
+  }
+
   const $form = document.querySelector('.addForm');
   $form.addEventListener('submit', (e) => {
     e.preventDefault();
     addBookToLibrary();
-    emptyForm();
   });
 
-  function deleteBook(index) {
-    library.splice(index, 1);
-    updateLocalStorage();
-    displayBooks();
-  }
-
+  const $books = document.querySelector('.displayLibrary');
   $books.addEventListener('click', (event) => {
     if (event.target.classList.contains('delete')) {
       const bookIndex = Array
         .from(event.target.parentNode.parentNode.children).indexOf(event.target.parentNode);
-      deleteBook(bookIndex);
+      myLibrary.deleteBook(bookIndex);
     }
   });
 
-  displayBooks(); // Call the function to display books initially.
+  myLibrary.displayBooks(); // Call the method to display books initially.
 });
