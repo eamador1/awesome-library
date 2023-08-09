@@ -4,22 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,700&display=swap" rel="stylesheet">
     <title>Awesome Library</title>
 </head>
 <body>
   <header>
-    <h1>Awesome Books</h1>
+    <h1>All awesome books</h1>
   </header>
   <section class="displayLibrary">
-    
+    <!-- Library injected here -->
   </section>
-  <form class="addForm">
-    <label></label>
-    <input type="text" class="title" id="title" placeholder="Title" required>
-    <label></label>
-    <input type="text" class="author" id="author" placeholder="Author" required>
-    <input type="Submit" value="Add">
-  </form>
+
+  <div><hr></div>
+  
+    
+  <section class="add">
+    <h4>Add a new book</h4>
+    <form class="addForm">
+      <label></label>
+      <input type="text" class="title" id="title" placeholder="Title" required>
+      <label></label>
+      <input type="text" class="author" id="author" placeholder="Author" required>
+      <input type="Submit" class="btn" value="Add">
+    </form>
+  </section>
 <script src="script.js"></script> 
    
 </body>
