@@ -27,19 +27,22 @@ class Library {
     this.books.forEach((book, index) => {
       const $contBook = document.createElement('div');
       const $title = document.createElement('h6');
+      const $by = document.createElement('h6');
       const $author = document.createElement('h6');
       const $delete = document.createElement('button');
-
       $contBook.classList.add('cont-book');
       $title.classList.add('titleBook');
+      $by.classList.add('by');
       $author.classList.add('authorBook');
       $delete.classList.add('delete');
 
-      $title.innerText = book.title;
+      $title.innerText = '"'+book.title+'"';
       $author.textContent = book.author;
+      $by.textContent = 'by';
       $delete.innerHTML = 'Remove';
 
       $contBook.appendChild($title);
+      $contBook.appendChild($by);
       $contBook.appendChild($author);
       $contBook.appendChild($delete);
 
