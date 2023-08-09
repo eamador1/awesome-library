@@ -29,7 +29,6 @@ class Library {
       const $title = document.createElement('h6');
       const $author = document.createElement('h6');
       const $delete = document.createElement('button');
-      const $division = document.createElement('hr');
 
       $contBook.classList.add('cont-book');
       $title.classList.add('titleBook');
@@ -38,12 +37,11 @@ class Library {
 
       $title.innerText = book.title;
       $author.textContent = book.author;
-      $delete.innerHTML = 'Delete';
+      $delete.innerHTML = 'Remove';
 
       $contBook.appendChild($title);
       $contBook.appendChild($author);
       $contBook.appendChild($delete);
-      $contBook.appendChild($division);
 
       $delete.addEventListener('click', () => this.deleteBook(index));
 
