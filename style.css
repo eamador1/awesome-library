@@ -11,16 +11,17 @@ header {
   display: flex;
   justify-content: center;
 }
+
 .displayLibrary {
   display: flex;
   flex-direction: column;
-  align-items: center;/* 
+  align-items: center;/*
   padding: 2.5%; */
 }
 
 .cont-book {
   display: flex;
-  width:100%;
+  width: 100%;
 }
 
 .cont-book:nth-child(even) {
@@ -34,7 +35,6 @@ header {
 .titleBook {
   width: 40vw;
   padding: 1%;
-  
 }
 
 .authorBook {
@@ -73,14 +73,14 @@ div hr {
 }
 
 .add h4 {
-  width:40%
+  width: 40%;
 }
 
 .addForm {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width:100%;
+  width: 100%;
   gap: 0.5vh;
 }
 
@@ -99,76 +99,70 @@ div hr {
 }
 
 .by {
-      padding: 1%;
-  
+  padding: 1%;
 }
 
 @media screen and (min-width: 768px) {
-
   .displayLibrary {
     margin: auto;
     max-width: 65vw;
     outline: 2px solid black;
   }
 
-h1 {
-  margin-top: 2rem;
-}
+  h1 {
+    margin-top: 2rem;
+  }
 
-h4 {
-  text-align: center;
-  margin-top: 1rem;
-  font-size: 1.5rem;
-}
+  h4 {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
 
-.addForm {
-max-width: 50vw;
-}
+  .addForm {
+    max-width: 50vw;
+  }
 
-.btn {
-  width: 3rem;
-  background-color: white;
-  border: 2px solid black;
-  height: 1.3rem;
-}
+  .btn {
+    width: 3rem;
+    background-color: white;
+    border: 2px solid black;
+    height: 1.3rem;
+  }
 
-.title {
-  border: 2px solid black;
-  height: 1.3rem;
-  padding-left: .3rem;
-  font-size: 1rem;
-}
+  .title {
+    border: 2px solid black;
+    height: 1.3rem;
+    padding-left: 0.3rem;
+    font-size: 1rem;
+  }
 
-.delete {
-  margin-top: .2rem;
-  margin-bottom: .2rem;
-  margin-right: .7rem;
-background-color: white;
-font-size: 1rem;
-font-weight: 600;
-height: 2rem;
+  .delete {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    margin-right: 0.7rem;
+    background-color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    height: 2rem;
+  }
 
-}
+  .author {
+    border: 2px solid black;
+    height: 1.3rem;
+    padding-left: 0.3rem;
+  }
 
+  .cont-book {
+    /*   display: flex; */
+    width: 100%;
+  }
 
-.author {
-  border: 2px solid black;
-  height: 1.3rem;
-  padding-left: .3rem;
-}
+  .cont-book:nth-child(even) {
+    background-color: rgb(160, 217, 203);
+  }
 
-.cont-book {
-/*   display: flex; */
-  width:100%;
-}
-
-.cont-book:nth-child(even) {
-  background-color: rgb(160, 217, 203);
-}
-
-.cont-book:nth-child(odd) {
-  background-color: aliceblue;
-}
-
-
+  .cont-book:nth-child(odd) {
+    background-color: aliceblue;
+  }
 }

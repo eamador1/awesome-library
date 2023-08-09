@@ -36,7 +36,7 @@ class Library {
       $author.classList.add('authorBook');
       $delete.classList.add('delete');
 
-      $title.innerText = '"'+book.title+'"';
+      $title.innerText = `"${book.title}"`;
       $author.textContent = book.author;
       $by.textContent = 'by';
       $delete.innerHTML = 'Remove';
