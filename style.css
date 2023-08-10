@@ -19,15 +19,23 @@ body {
   font-weight: 600;
 }
 
+h1 {
+  display: none;
+}
+
 #navLinks {
   display: flex;
   gap: 1rem;
-}
-
-.navLinks {
   text-decoration: none;
 }
 
+.navLinks a:hover {
+  color: red;
+}
+
+#navLinks .navLinks {
+  text-decoration: none;
+}
 
 header {
   width: 100%;
@@ -38,8 +46,8 @@ header {
 .displayLibrary {
   display: flex;
   flex-direction: column;
-  align-items: center;/*
-  padding: 2.5%; */
+  align-items: center;
+  display: none;
 }
 
 .cont-book {
@@ -93,6 +101,7 @@ div hr {
   align-items: center;
   padding: 1vh;
   margin: 1rem;
+  display: none;
 }
 
 .add h4 {
@@ -132,7 +141,10 @@ div hr {
   justify-content: space-between;
   margin: 1rem;
   border: 2px solid black;
-  
+}
+
+.active {
+  display: block;
 }
 
 @media screen and (min-width: 768px) {
