@@ -6,6 +6,29 @@ body {
   font-family: 'Comic Neue', cursive;
 }
 
+#navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem;
+  border: 2px solid black;
+}
+
+#navTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+#navLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.navLinks {
+  text-decoration: none;
+}
+
+
 header {
   width: 100%;
   display: flex;
@@ -100,6 +123,16 @@ div hr {
 
 .by {
   padding: 1%;
+}
+
+
+#footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem;
+  border: 2px solid black;
+  
 }
 
 @media screen and (min-width: 768px) {
