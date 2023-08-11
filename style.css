@@ -44,10 +44,11 @@ header {
 }
 
 .displayLibrary {
-  display: flex;
+  display: flex none;
   flex-direction: column;
   align-items: center;
-  display: none;
+  visibility: hidden;
+  z-index:0;
 }
 
 .cont-book {
@@ -96,12 +97,12 @@ div hr {
 }
 
 .add {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   padding: 1vh;
   margin: 1rem;
-  display: none;
+  z-index: 0;
 }
 
 .add h4 {
@@ -143,14 +144,18 @@ div hr {
 }
 
 .active {
-  display: block;
+  display: flex;
+  visibility: visible;
+  z-index:100;
 }
 
 
-#ContactInform {
-  display: flex;
+.contactInform {
+  display: none;
+  visibility: none;
   flex-direction: column;
   align-items: center;
+  z-index:0;
 }
 
 #contactTitle {
@@ -176,7 +181,7 @@ div hr {
 }
 
 #footer {
-  display: flex;
+  display: flex none;
   flex-direction: row;
   justify-content: space-between;
   margin: 1rem;
