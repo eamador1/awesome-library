@@ -6,6 +6,46 @@ body {
   font-family: 'Comic Neue', cursive;
 }
 
+#navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem;
+  border: 2px solid black;
+}
+
+#navTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-left: 1%;
+}
+
+h1 {
+  display: none;
+}
+
+#navLinks {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 1rem;
+  list-style: none;
+  width: 14vw;
+}
+
+#contactButton {
+  margin-right: 5%;
+}
+
+.navLinks a:hover {
+  color: red;
+  cursor: pointer;
+}
+
+#navLinks .navLinks {
+  text-decoration: none;
+}
+
 header {
   width: 100%;
   display: flex;
@@ -13,10 +53,11 @@ header {
 }
 
 .displayLibrary {
-  display: flex;
+  display: none;
   flex-direction: column;
-  align-items: center;/*
-  padding: 2.5%; */
+  align-items: center;
+  visibility: hidden;
+  z-index: 0;
 }
 
 .cont-book {
@@ -65,11 +106,12 @@ div hr {
 }
 
 .add {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   padding: 1vh;
   margin: 1rem;
+  z-index: 0;
 }
 
 .add h4 {
@@ -102,19 +144,35 @@ div hr {
   padding: 1%;
 }
 
-#ContactInform {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.footer {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2.5vw;
+  border: 2px solid black;
+  width: 95%;
 }
 
+.contactInform {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  z-index: 0;
+}
+
+.active {
+  display: flex;
+  visibility: visible;
+  z-index: 100;
+}
 
 #contactTitle {
   font-size: 2rem;
   margin-top: 2rem;
   margin-bottom: 3rem;
 }
-
 
 #contactP {
   font-size: 1.4rem;
@@ -123,20 +181,17 @@ div hr {
   margin-bottom: 2rem;
 }
 
-
 #contactList {
   margin-bottom: 2rem;
 }
-
 
 .contactList {
   font-size: 1.3rem;
   font-weight: 600;
 }
 
-
 #footer {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: space-between;
   margin: 1rem;
@@ -144,10 +199,10 @@ div hr {
   height: 1.5rem;
 }
 
-
 #footerCopy {
   font-size: 1.2rem;
   font-weight: 600;
+  margin: 1%;
 }
 
 @media screen and (min-width: 768px) {
